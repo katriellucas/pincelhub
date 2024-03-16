@@ -1,0 +1,8 @@
+:root {
+	scrollbar-width: thin;
+	scrollbar-color: var(--surface-container-highest) var(--surface-container-lowest);
+}
+
+#__app {
+	display: contents;
+}
