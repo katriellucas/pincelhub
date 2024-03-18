@@ -18,12 +18,13 @@
 
 	let { children } = $props();
 
-	// let list = [
-	// 	{ headline: m.public__home(), href: '/' },
-	// 	{ headline: m.public__services(), href: '#services' },
-	// 	{ headline: m.public__customers(), href: '#customers' },
-	// 	{ headline: m.public__price(), href: '/plans' }
-	// ];
+	function toSection(anchor) {
+		console.log(document.querySelector(anchor))
+		window.scrollTo({
+			top: document.querySelector(anchor).offsetTop,
+			behavior: 'smooth'
+		})
+	}
 </script>
 
 <TopAppBar sticky={w.scrollY ? 'sticky' : 'top'}>
@@ -31,9 +32,11 @@
 		<Logo>PincelHub</Logo>
 	</section>
 	<section>
-		<CommonButton visual="text">Início</CommonButton>
-		<CommonButton visual="text">Produtos</CommonButton>
-		<CommonButton visual="text">Perguntas</CommonButton>
+		<CommonButton visual="text" onclick={() => toSection("#hero")}>
+		Início
+		</CommonButton>
+		<CommonButton href="#products-section" visual="text">Produtos</CommonButton>
+		<CommonButton href="#faq-section" visual="text">Perguntas</CommonButton>
 		<CommonButton visual="text">Contato</CommonButton>
 	</section>
 </TopAppBar>

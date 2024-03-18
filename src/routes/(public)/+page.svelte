@@ -10,7 +10,7 @@
 	import { FAB } from '$components/buttons';
 	import ReviewCard from '$components/cards/ReviewCard.svelte';
 	import AutoSlider from '$components/misc/AutoSlider.svelte';
-	
+
 	const starterKit = [
 		'Ipsum Dolor',
 		'Sit Amet',
@@ -34,7 +34,7 @@
 	export let data;
 </script>
 
-<section class="hero-section">
+<section id="hero" class="hero-section">
 	<h1 class="hero-title">Lorem ipsum</h1>
 	<p class="hero-description">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -61,8 +61,8 @@
 
 <Divider />
 
-<h2 class="section-title">O que vem</h2>
-<section class="product-section">
+<h2  class="section-title">O que vem</h2>
+<section id="products-section" class="product-section">
 	<ProductCard
 		image="/product-placeholder.webp"
 		title="Kit Starter"
@@ -115,7 +115,7 @@
 <Divider />
 
 <h2 class="section-title">Perguntas Frequentes</h2>
-<section class="faq-section">
+<section class="faq-section" id="hero-section">
 	<Accordion title="title">
 		<p>
 			Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
