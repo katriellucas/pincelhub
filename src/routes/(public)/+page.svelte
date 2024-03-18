@@ -10,11 +10,7 @@
 	import { FAB } from '$components/buttons';
 	import ReviewCard from '$components/cards/ReviewCard.svelte';
 	import AutoSlider from '$components/misc/AutoSlider.svelte';
-
-	async function fetchData() {
-    return await fetch('https://dummyjson.com/quotes?limit=10').then(res => res.json());
-  }
-
+	
 	const starterKit = [
 		'Ipsum Dolor',
 		'Sit Amet',
@@ -34,6 +30,8 @@
 		'Do Eiusmod',
 		'Tempor Incididunt'
 	];
+
+	export let data;
 </script>
 
 <section class="hero-section">
@@ -84,7 +82,7 @@
 <h2 class="section-title">Depoimentos</h2>
 <section class="reviews-section">
 	<AutoSlider>
-		{#await fetchData() then x}
+		{#await data.quotes then x}
 			{#each x.quotes as {author, quote}, i}
 				<ReviewCard image="https://source.boringavatars.com/beam/40/{i}" name={author}>
 					{quote}
@@ -93,7 +91,7 @@
 		{/await}
 	</AutoSlider>
 	<AutoSlider inverse>
-		{#await fetchData() then x}
+		{#await data.quotes then x}
 			{#each x.quotes as {author, quote}, i}
 				<ReviewCard image="https://source.boringavatars.com/beam/40/{i}" name={author}>
 					{quote}
