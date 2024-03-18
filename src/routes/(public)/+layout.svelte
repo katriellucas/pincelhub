@@ -27,12 +27,12 @@
 	}
 </script>
 
-<TopAppBar sticky={w.scrollY ? 'sticky' : 'top'}>
+<TopAppBar >
 	<section>
 		<Logo>PincelHub</Logo>
 	</section>
 	<section>
-		<CommonButton visual="text" onclick={() => toSection("#hero")}>
+		<CommonButton href="#" visual="text">
 		Início
 		</CommonButton>
 		<CommonButton href="#products-section" visual="text">Produtos</CommonButton>

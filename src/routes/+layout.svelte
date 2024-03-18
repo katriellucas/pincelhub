@@ -14,7 +14,6 @@
 
 <svelte:window
 	bind:innerWidth={w.innerWidth}
-	bind:scrollY={w.scrollY}
 	bind:innerHeight={w.innerHeight}
 />
 

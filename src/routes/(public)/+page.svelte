@@ -34,7 +34,7 @@
 	export let data;
 </script>
 
-<section id="hero" class="hero-section">
+<section class="hero-section">
 	<h1 class="hero-title">Lorem ipsum</h1>
 	<p class="hero-description">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -61,8 +61,8 @@
 
 <Divider />
 
-<h2  class="section-title">O que vem</h2>
-<section id="products-section" class="product-section">
+<h2 id="products-section" class="section-title">O que vem</h2>
+<section class="product-section">
 	<ProductCard
 		image="/product-placeholder.webp"
 		title="Kit Starter"
@@ -114,8 +114,8 @@
 
 <Divider />
 
-<h2 class="section-title">Perguntas Frequentes</h2>
-<section class="faq-section" id="hero-section">
+<h2 id="faq-section" class="section-title">Perguntas Frequentes</h2>
+<section class="faq-section">
 	<Accordion title="title">
 		<p>
 			Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,

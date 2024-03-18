@@ -3,7 +3,7 @@
 </script>
 
 <!-- @katriel, find a better way to choose bg color instead of this class sticky/top mess -->
-<header class="top-app-bar {sticky}">
+<header class="top-app-bar sticky">
 	{@render children()}
 </header>
 
