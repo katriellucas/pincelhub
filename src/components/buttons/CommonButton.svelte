@@ -51,8 +51,8 @@
 	}
 
 	.filled {
-		background: var(--primary);
-		color: var(--on-primary);
+		background: var(--primary-container);
+		color: var(--on-primary-container);
 	}
 
 	.tonal {
