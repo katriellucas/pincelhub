@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { window as w } from '$lib/managers';
 	import Icon from '@iconify/svelte';
 	import ProductCard from '$components/cards/ProductCard.svelte';
-	import CommonButton from '$components/buttons/CommonButton.svelte';
-	import { List, ListItem } from '$components/lists';
+
 	import SimpleCard from '$components/cards/SimpleCard.svelte';
 	import Accordion from '$components/misc/Accordion.svelte';
 	import Divider from '$components/Divider.svelte';
@@ -34,7 +32,7 @@
 	export let data;
 </script>
 
-<section class="hero-section">
+<section class="section hero-section">
 	<h1 class="hero-title">Lorem ipsum</h1>
 	<p class="hero-description">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -48,7 +46,7 @@
 </section>
 
 <h2 class="section-title">Descrição</h2>
-<section class="description-section">
+<section class="section description-section">
 	<SimpleCard --width="640px">
 		Lorem ipsum dolor sit amet. Et iusto nihil At eligendi amet est illum molestias aut laboriosam
 		officia qui impedit maiores ad laborum repellendus et doloribus internos. Et iure placeat sit
@@ -103,7 +101,7 @@
 
 <Divider />
 
-<section class="buy-section">
+<section class="section buy-section">
 	<Icon class="graphic" icon="fluent-emoji:megaphone" width="200" />
 	<div>
 		<h3 class="buy-section__title">Adquira já o seu!</h3>
@@ -115,7 +113,7 @@
 <Divider />
 
 <h2 id="faq-section" class="section-title">Perguntas Frequentes</h2>
-<section class="faq-section">
+<section class="section faq-section">
 	<Accordion title="title">
 		<p>
 			Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
@@ -137,20 +135,8 @@
 </section>
 
 <style lang="scss">
-	.section-title {
-		font: var(--headline-large);
-		padding: 64px 0 48px;
-		text-align: center;
-	}
-
-	.hero-section {
-		background: var(--surface);
-		display: flex;
-		flex-direction: column;
-		height: 100vh;
-		justify-content: center;
-
-		padding: 0 16px;
+	.section {
+		padding: 0 24px;
 
 		@media (min-width: 600px) {
 			padding: 0 32px;
@@ -169,6 +155,20 @@
 		}
 	}
 
+	.section-title {
+		font: var(--headline-large);
+		padding: 64px 0 48px;
+		text-align: center;
+	}
+
+	.hero-section {
+		background: var(--surface);
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		justify-content: center;
+	}
+
 	.hero-title {
 		font: var(--display-large);
 		max-width: 600px;
@@ -184,6 +184,7 @@
 		grid-template-columns: repeat(auto-fit, 320px);
 		gap: 64px;
 		justify-content: center;
+		margin-bottom: 64px;
 	}
 
 	.reviews-section {
@@ -235,7 +236,7 @@
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-		gap: 8px;
+		gap: 16px;
 		padding-bottom: 64px;
 	}
 

@@ -1,23 +1,11 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 
-	let { href, icon, type, target, onclick, visual, files, checked, multiple } =
+	let { href, icon, type, target, onclick, visual } =
 		$props<IconButton>();
 </script>
 
-{#if type === 'file'}
-	<label class="icon-button target">
-		<input class="hidden" type="file" bind:files {multiple} />
-		<span class="button ripple {visual}"><Icon {icon} /></span>
-	</label>
-{:else if type === 'checkbox'}
-	<label class="icon-button target">
-		<input type="checkbox" bind:checked hidden />
-		<span class="button ripple standard" class:checked>
-			<Icon {icon} />
-		</span>
-	</label>
-{:else if href}
+{#if href}
 	<a class="icon-button target" {target} {onclick} {href}>
 		<span class="button ripple {visual}"><Icon {icon} /></span>
 	</a>

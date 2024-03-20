@@ -1,30 +1,28 @@
 <script lang="ts">
 	import { window as w, theme } from '$lib/managers';
-	// import { outcomps, menus } from '$lib/runtime-comps.svelte.js';
+
 	import Icon from '@iconify/svelte';
 
 	import TopAppBar from '$components/TopAppBar.svelte';
-	import { CommonButton } from '$components/buttons';
+	import { CommonButton, IconButton } from '$components/buttons';
 	import AppFooter from '$components/AppFooter.svelte';
-	// import { CommonButton, IconButton } from '$components/buttons';
-	// import Dialog from '$components/Dialog.svelte';
-	// import Divider from '$components/Divider.svelte';
-	// import List from '$components/lists/List.svelte';
-	// import ListItem from '$components/lists/ListItem.svelte';
+
 	import Logo from '$components/misc/Logo.svelte';
 	import Fab from '$components/buttons/FAB.svelte';
+	import { Menu, MenuItem } from '$components/menus';
 	// import Menu from '$components/menus/Menu.svelte';
 	// import MenuItem from '$components/menus/MenuItem.svelte';
 
 	let { children } = $props();
 
-	function toSection(anchor) {
-		console.log(document.querySelector(anchor))
-		window.scrollTo({
-			top: document.querySelector(anchor).offsetTop,
-			behavior: 'smooth'
-		})
-	}
+	let navMenu = $state(false)
+	let navItems = [
+		{ label: 'Início', href: '#' },
+    { label: 'Produtos', href: '#products-section' },
+    { label: 'Perguntas', href: '#faq-section' },
+    { label: 'Contato', href: '' }
+	]
+
 </script>
 
 <TopAppBar >
@@ -32,12 +30,28 @@
 		<Logo>PincelHub</Logo>
 	</section>
 	<section>
-		<CommonButton href="#" visual="text">
-		Início
-		</CommonButton>
-		<CommonButton href="#products-section" visual="text">Produtos</CommonButton>
-		<CommonButton href="#faq-section" visual="text">Perguntas</CommonButton>
-		<CommonButton visual="text">Contato</CommonButton>
+		{#if w.innerWidth > 600}
+			{#each navItems as { label, href }}
+				<CommonButton {href} visual="text">{label}</CommonButton>
+			{/each}
+		{:else}
+			<Menu tag="nav"
+				isOpen={navMenu}
+				position="bottom-right"
+				onClose={() => navMenu = true}
+			>
+			<IconButton
+				icon="mdi:menu"
+				visual="standard"
+				onclick={() => navMenu = !navMenu}
+			/>
+			{#snippet content()}
+				{#each navItems as { label, href }}
+					<MenuItem tag="a" type="material" {href}>{label}</MenuItem>
+				{/each}
+			{/snippet}
+		</Menu>
+		{/if}
 	</section>
 </TopAppBar>
 
@@ -64,5 +78,34 @@
 		position: fixed;
 		bottom: 16px;
 		right: 16px;
+	}
+
+	.hover-menu {
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		position: absolute;
+		top: 100%;
+		opacity: 0;
+		transform: translateY(-20px);
+		transition: 
+			transform .2s ease-in-out,
+			opacity .1s ease-out;
+		overflow: hidden;
+		z-index: 1;
+	}
+
+	.hover-menu-button {
+		position: relative;
+
+		&:hover, &:focus, &:focus-within {
+			& + .hover-menu {
+				opacity: 1;
+				transform: translateY(0px);
+				height: auto;
+				z-index: 1;
+			}
+		}
 	}
 </style>
