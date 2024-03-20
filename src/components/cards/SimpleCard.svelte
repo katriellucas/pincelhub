@@ -16,7 +16,6 @@
 		justify-content: space-between;
 		max-width: var(--width);
 		padding: 24px;
-		width: var(100%);
 	}
 
 	.title {

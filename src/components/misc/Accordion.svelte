@@ -11,6 +11,7 @@
 	details {
 		border: solid 1px var(--outline-variant);
 		border-radius: var(--corner-medium);
+		font: var(--body-large);
 		max-width: 640px;
 		width: 100%;
 	}
