@@ -8,13 +8,10 @@
 </script>
 
 <div class="accordion">
-	<div class="title">
+	<button class="title" onclick={() => open = !open}>
 		{title}
-		<IconButton
-			icon="mdi:chevron-{open ? 'up' : 'down'}"
-			onclick={() => open = !open}
-		/>
-	</div>
+		<IconButton icon="mdi:chevron-{open ? 'up' : 'down'}" />
+	</button>
 	{#if open}
 		<p transition:slide={{duration: 300, axis: 'y'}}>
 			{@render children()}
@@ -28,15 +25,18 @@
 		border-radius: var(--corner-medium);
 		font: var(--body-large);
 		max-width: 640px;
+		overflow: hidden;
 		width: 100%;
 	}
 
 	.title {
     align-items: center;
+		cursor: pointer;
 		display: flex;
 		font: var(--title-medium);
 		justify-content: space-between;
 		padding: 4px 4px 4px 16px;
+		width: 100%;
 	}
 
 	p {
