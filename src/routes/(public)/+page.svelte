@@ -115,22 +115,13 @@
 <h2 id="faq-section" class="section-title">Perguntas Frequentes</h2>
 <section class="section faq-section">
 	<Accordion title="title">
-		<p>
-			Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-			international pavilions, award-winning fireworks and seasonal special events.
-		</p>
+		Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.
 	</Accordion>
 	<Accordion title="title">
-		<p>
-			Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-			international pavilions, award-winning fireworks and seasonal special events.
-		</p>
+		Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.
 	</Accordion>
 	<Accordion title="title">
-		<p>
-			Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-			international pavilions, award-winning fireworks and seasonal special events.
-		</p>
+		Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.
 	</Accordion>
 </section>
 
