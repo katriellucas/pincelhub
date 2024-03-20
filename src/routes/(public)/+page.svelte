@@ -41,7 +41,7 @@
 
 	<div>
 		<FAB visual="primary">Primary action</FAB>
-		<FAB visual="surface">Secondary action</FAB>
+		<FAB visual="tertiary">Secondary action</FAB>
 	</div>
 </section>
 

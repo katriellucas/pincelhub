@@ -60,8 +60,8 @@
 
 	// COLORS OPTIONS 🎨
 	.primary {
-		background: var(--primary);
-		color: var(--on-primary);
+		background: var(--primary-container);
+		color: var(--on-primary-container);
 	}
 
 	.secondary {
@@ -70,8 +70,8 @@
 	}
 
 	.tertiary {
-		background: var(--tertiary);
-		color: var(--on-tertiary);
+		background: var(--tertiary-container);
+		color: var(--on-tertiary-container);
 	}
 
 	.surface {
