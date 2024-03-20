@@ -52,7 +52,7 @@
 
 	.content {
 		background: var(--surface-container-high);
-		border-radius: var(--corner-extra-small);
+		border-radius: var(--corner-small);
 		max-height: 240px;
 		max-width: 280px;
 		min-width: 112px;

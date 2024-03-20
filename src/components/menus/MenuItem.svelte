@@ -28,7 +28,8 @@
 		display: flex;
 		font: var(--label-large);
 		height: 48px;
-		padding: 0 12px;
+		padding: 0 16px;
+		justify-content: end;
 		white-space: nowrap;
 		width: 100%;
 
