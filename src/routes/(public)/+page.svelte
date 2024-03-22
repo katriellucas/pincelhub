@@ -8,6 +8,7 @@
 	import { FAB } from '$components/buttons';
 	import ReviewCard from '$components/cards/ReviewCard.svelte';
 	import AutoSlider from '$components/misc/AutoSlider.svelte';
+	import BenefitsCard from '$components/cards/BenefitsCard.svelte';
 
 	const starterKit = [
 		'Ipsum Dolor',
@@ -33,8 +34,8 @@
 </script>
 
 <section class="section hero-section">
-	<h1 class="hero-title">Lorem ipsum</h1>
-	<p class="hero-description">
+	<h1 class="hero-section__title">Lorem ipsum</h1>
+	<p class="hero-section__description">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua.
 	</p>
@@ -72,6 +73,16 @@
 		title="Kit Premium"
 		content={premiumKit}
 		href="https://"
+	/>
+</section>
+
+<Divider />
+
+<h2 id="products-section" class="section-title">Benefícios</h2>
+<section class="section benefits-section">
+	<BenefitsCard
+		image="/product-placeholder.webp"
+		content={premiumKit}
 	/>
 </section>
 
@@ -156,24 +167,31 @@
 		background: var(--surface);
 		display: flex;
 		flex-direction: column;
+		gap: 16px;
 		height: 100vh;
 		justify-content: center;
-	}
 
-	.hero-title {
-		font: var(--display-large);
-		max-width: 600px;
-	}
+		&__title {
+			font: var(--display-large);
+			max-width: 600px;
+		}
 
-	.hero-description {
-		font: var(--body-large);
-		max-width: 600px;
+		&__description {
+			font: var(--body-large);
+			max-width: 600px;
+		}
 	}
 
 	.product-section {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, 320px);
-		gap: 64px;
+		gap: 32px;
+		justify-content: center;
+		margin-bottom: 64px;
+	}
+
+	.benefits-section {
+		display: flex;
 		justify-content: center;
 		margin-bottom: 64px;
 	}
@@ -233,14 +251,5 @@
 
 	:global(.graphic) {
 		filter: drop-shadow(1px 1px 64px #f9c23c);
-	}
-
-	@keyframes slideFromLeft {
-		0% {
-			transform: translateX(-100%);
-		}
-		100% {
-			transform: translateX(0%);
-		}
 	}
 </style>
