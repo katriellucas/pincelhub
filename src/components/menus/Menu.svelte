@@ -38,7 +38,7 @@
 			this={tag}
 			class="content"
 			style:inset
-			transition:slide={{ duration: 150, axis: 'y' }}
+			transition:slide|global={{ duration: 150, axis: 'y' }}
 		>
 			{@render content()}
 		</svelte:element>
